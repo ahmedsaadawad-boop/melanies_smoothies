@@ -32,8 +32,8 @@ if ingredients_list:
         ingredients_string += fruit_chosen + ' '
         # API Call
         st.subheader(fruit_chosen + ' Nutrion Information')
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit" + fruit_chosen)  
-        sf_df = st.dataframe(data = smoothiefroot_response.json())
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)  
+        sf_df = st.dataframe(data=smoothiefroot_response.json())
       
     #st.write(ingredients_string)
     my_insert_stmt = "insert into smoothies.public.orders(name_on_order, ingredients) values ('" + name_on_order + "', '" + ingredients_string + "')"
